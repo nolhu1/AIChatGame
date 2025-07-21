@@ -1,5 +1,7 @@
+import Constants from "expo-constants";
 import { io } from "socket.io-client";
-require("dotenv").config();
-export const socket = io(process.env.SERVER_URL, {
+
+const SERVER_URL = Constants.expoConfig?.extra?.SERVER_URL || "";
+export const socket = io(SERVER_URL, {
       transports: ["websocket"],
 });

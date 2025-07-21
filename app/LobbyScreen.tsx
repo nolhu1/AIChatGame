@@ -4,8 +4,7 @@ import { Button, FlatList, Text, TextInput, View } from "react-native";
 import { socket } from "../socket/socket";
 
 export default function LobbyScreen() {
-  const { lobbyId } = useLocalSearchParams<{ lobbyId: string }>();
-  const [username] = useState("User" + Math.floor(Math.random() * 1000));
+  const { lobbyId, username } = useLocalSearchParams<{ lobbyId: string, username: string }>();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<{ sender: string; message: string }[]>([]);
 
@@ -25,13 +24,14 @@ export default function LobbyScreen() {
 
   const sendMessage = () => {
     if (!lobbyId) return;
+    if (!message.trim()) return;
 
     socket.emit("sendMessage", { lobbyId, sender: username, message });
     setMessage("");
   };
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ padding: 20, flex: 1 }}>
       <FlatList
         data={messages}
         keyExtractor={(_, i) => i.toString()}
