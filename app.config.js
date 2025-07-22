@@ -1,9 +1,11 @@
 import 'dotenv/config';
 
+
 export default () => {
   const isDev = process.env.APP_ENV !== 'production';
 
   return {
+    
     expo: {
       name: "AIChatGame",
       slug: "AIChatGame",
@@ -49,6 +51,7 @@ export default () => {
         eas: {
           projectId: "c175093c-5155-419f-8aed-2e1f9cf14cf1"
         },
+        
         SERVER_URL: isDev
           ? 'ws://192.168.2.3:3000'
           : 'wss://ws-server-pk57.onrender.com'
