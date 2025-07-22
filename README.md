@@ -22,3 +22,4 @@ See [assets/architecture.png](./assets/architecture.png).
 ```bash
 npm install
 npx expo start --dev-client
+# AIChatGameProject
