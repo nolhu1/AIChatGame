@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import { socket } from "../socket/socket";
 
-export default function HomeScreen() {
+export default function Index() {
   const router = useRouter();
   const [lobbyName, setLobbyName] = useState("");
   const [lobbies, setLobbies] = useState<

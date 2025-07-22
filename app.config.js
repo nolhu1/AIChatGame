@@ -8,7 +8,7 @@ export default () => {
     
     expo: {
       name: "AIChatGame",
-      slug: "AIChatGame",
+      slug: "aichatgame",
       version: "1.0.0",
       orientation: "portrait",
       icon: "./assets/images/icon.png",
@@ -49,8 +49,7 @@ export default () => {
       extra: {
         router: {},
         eas: {
-          projectId: "c175093c-5155-419f-8aed-2e1f9cf14cf1"
-        },
+        "projectId": "fa242a18-b182-4f1b-81bb-731bf67ce39a"        },
         
         SERVER_URL: isDev
           ? 'ws://192.168.2.3:3000'
